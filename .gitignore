@@ -1,0 +1,11 @@
+data/
+node_modules/
+.env
+.env.*
+!.env.example
+deploy/initial-admins.json
+deploy/products.json
+*.sqlite*
+*.zip
+*.log
+.DS_Store

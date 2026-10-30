@@ -1,0 +1,17 @@
+[Unit]
+Description=Order Hub
+After=network.target
+[Service]
+Type=simple
+User=orderhub
+Group=orderhub
+WorkingDirectory=/opt/order-hub
+Environment=NODE_ENV=production
+Environment=ORDER_HUB_HOST=127.0.0.1
+Environment=ORDER_HUB_PORT=4318
+UMask=0077
+ExecStart=/usr/bin/node /opt/order-hub/server.mjs
+Restart=on-failure
+RestartSec=5
+[Install]
+WantedBy=multi-user.target

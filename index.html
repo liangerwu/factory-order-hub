@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="工贸一体企业内部订单协同管理系统">
+  <title>联单 · 订单协同管理系统</title>
+  <link rel="stylesheet" href="styles.css?v=31">
+  <link rel="stylesheet" href="polish.css?v=39">
+</head>
+<body>
+  <section id="loginScreen" class="login-screen hidden">
+    <div class="login-card">
+      <div class="brand login-brand"><span class="brand-mark">联</span><div><b>联单</b><small>ORDER HUB</small></div></div>
+      <h1>公司内部订单协同</h1><p>请使用公司分配的岗位账号登录</p>
+      <form id="loginForm"><label>手机号 / 账号<input name="username" autocomplete="username" required></label><label>密码<input name="password" type="password" autocomplete="current-password" required></label><button class="primary">登录工作台</button><div id="loginError" class="login-error"></div></form>
+      <small class="login-note">系统仅限公司内部人员使用，所有关键操作均会记录。首次登录请修改初始密码。</small>
+    </div>
+  </section>
+  <div id="appShell" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">联</span><div><b>联单</b><small>ORDER HUB</small></div></div>
+      <div class="company-tag">大安工贸内部系统</div>
+      <nav id="nav"></nav>
+      <div class="side-foot"><span class="online-dot"></span><div><b>系统运行正常</b><small>内部订单数据</small></div></div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div><p id="eyebrow">工作台</p><h1 id="pageTitle">管理看板</h1></div>
+        <div class="top-actions">
+          <div class="notice-controls"><button type="button" class="ghost" id="workNoticeBtn">🔔 工单提醒</button><button type="button" class="ghost" id="soundToggle" aria-pressed="false">🔇 开启声音</button><button type="button" class="ghost" id="soundTest">试听 · 叮咚两遍</button></div>
+          <div class="role-switch"><span>当前身份</span><b id="currentUser"></b></div>
+          <button class="ghost" id="logoutBtn">退出</button>
+          <button class="primary" id="newOrderBtn">＋ 新建订单</button>
+        </div>
+      </header>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+  <div id="workNoticePopup" class="work-notice-popup hidden" role="status" aria-live="polite"></div>
+  <div id="toast" class="toast"></div>
+  <div id="modal" class="backdrop hidden"><div id="modalBody" class="modal"></div></div>
+  <script type="module" src="app.js?v=64"></script>
+</body>
+</html>
